@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الصفوة | El Safwa Gold</title>
+<meta name="description" content="الصفوة، ذهب ومجوهرات. مختارات من أرقى المشغولات الذهبية بصياغة متقنة.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='11' y='11' width='10' height='10' fill='%23d8b45a' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<div class="safwa" data-theme="dark" id="safwa">
+  <header class="safwa-top">
+    <div class="safwa-brand">
+      <span class="safwa-brand-name" data-i18n="brand">الصفوة</span>
+      <span class="safwa-brand-sub" data-i18n="brandLatin">EL SAFWA</span>
+    </div>
+    <div class="safwa-toggles" dir="ltr">
+      <button type="button" class="safwa-toggle" id="langBtn">EN</button>
+      <button type="button" class="safwa-toggle" id="themeBtn">الوضع الفاتح</button>
+    </div>
+  </header>
+
+  <section class="safwa-hero">
+    <img class="safwa-hero-img" src="photos/hero.jpg" alt="قلادة ذهبية على خلفية داكنة">
+    <div class="safwa-hero-overlay"></div>
+    <div class="safwa-hero-content">
+      <p class="safwa-hero-eyebrow hero-anim" style="animation-delay:0.15s" data-i18n="heroEyebrow">ذهب ومجوهرات</p>
+      <h1 class="safwa-hero-title hero-anim" style="animation-delay:0.35s" data-i18n="heroTitle">الصفوة</h1>
+      <div class="safwa-hero-rule hero-anim" style="animation-delay:0.55s"></div>
+      <p class="safwa-hero-sub hero-anim" style="animation-delay:0.7s" data-i18n="heroSub">قطع من الذهب تُصاغ لتُروى</p>
+      <p class="safwa-hero-text hero-anim" style="animation-delay:0.85s" data-i18n="heroText">مختارات من أرقى المشغولات الذهبية، بصياغة متقنة وذوق يليق بأجمل لحظاتك.</p>
+      <div class="safwa-hero-ctas hero-anim" style="animation-delay:1.05s">
+        <a class="safwa-btn safwa-btn-solid" href="#collections" data-i18n="heroCta1">اكتشف المجموعات</a>
+        <a class="safwa-btn safwa-btn-line" href="#contact" data-i18n="heroCta2">تواصل معنا</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="safwa-marquee" aria-hidden="true">
+    <div class="safwa-marquee-track" id="marquee"></div>
+  </div>
+
+  <section class="safwa-features" id="features"></section>
+
+  <section class="safwa-about" id="about">
+    <div class="safwa-about-media reveal">
+      <img src="photos/about.jpg" alt="امرأة ترتدي قلائد ذهبية متعددة" data-i18n-alt="aboutAlt">
+    </div>
+    <div class="safwa-about-body">
+      <p class="safwa-label reveal" data-i18n="aboutLabel">من نحن</p>
+      <h2 class="safwa-title reveal" style="transition-delay:0.1s" data-i18n="aboutTitle">الصفوة… اسم يليق بالذهب</h2>
+      <p class="safwa-p reveal" style="transition-delay:0.2s" data-i18n="aboutP1">الصفوة محل ذهب ومجوهرات يجمع بين أصالة الصنعة وذوق العصر. نختار كل قطعة بعناية، من المشغولات اليومية الخفيفة إلى أطقم المناسبات الفخمة.</p>
+      <p class="safwa-p safwa-p-gold reveal" style="transition-delay:0.3s" data-i18n="aboutP2">هنا الذهب ليس معدنًا فقط، بل ذكرى تُقتنى وهدية تُروى.</p>
+    </div>
+  </section>
+
+  <section class="safwa-gallery" id="collections">
+    <p class="safwa-label reveal" data-i18n="galleryLabel">من أعمالنا</p>
+    <h2 class="safwa-title reveal" style="transition-delay:0.1s" data-i18n="galleryTitle">مجموعات مختارة</h2>
+    <div class="safwa-gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <section class="safwa-craft">
+    <div class="safwa-craft-body">
+      <p class="safwa-label reveal" data-i18n="craftLabel">الصنعة</p>
+      <h2 class="safwa-title reveal" style="transition-delay:0.1s" data-i18n="craftTitle">من يد الصائغ إلى يدك</h2>
+      <p class="safwa-p reveal" style="transition-delay:0.2s" data-i18n="craftP">كل قطعة في الصفوة تمر بمراحل دقيقة: اختيار الخامة، التشكيل، ثم التشطيب اليدوي، حتى تصل إليك كما يجب أن يكون الذهب.</p>
+      <ul class="safwa-craft-list reveal" style="transition-delay:0.3s" id="craftList"></ul>
+    </div>
+    <div class="safwa-craft-media reveal">
+      <img src="photos/craft.jpg" alt="صائغ يشكّل قطعة مجوهرات في الورشة" data-i18n-alt="craftAlt">
+    </div>
+  </section>
+
+  <section class="safwa-contact" id="contact">
+    <p class="safwa-label reveal" data-i18n="contactLabel">تواصل معنا</p>
+    <h2 class="safwa-title reveal" style="transition-delay:0.1s" data-i18n="contactTitle">في انتظارك</h2>
+    <div class="safwa-contact-rows reveal" style="transition-delay:0.2s">
+      <div class="safwa-contact-row"><span class="safwa-contact-label" data-i18n="addressLabel">العنوان</span><span class="safwa-contact-value" data-i18n="address">١٢ شارع الجمهورية، وسط البلد، القاهرة</span></div>
+      <div class="safwa-contact-row"><span class="safwa-contact-label" data-i18n="phoneLabel">تليفون وواتساب</span><span class="safwa-contact-value" dir="ltr"><bdi data-i18n="phone">0100 000 0000</bdi></span></div>
+      <div class="safwa-contact-row"><span class="safwa-contact-label" data-i18n="hoursLabel">مواعيد العمل</span><span class="safwa-contact-value" data-i18n="hours">يوميًا من ١٠ صباحًا حتى ١٠ مساءً</span></div>
+    </div>
+    <div class="safwa-contact-ctas reveal" style="transition-delay:0.3s">
+      <a class="safwa-btn safwa-btn-solid" id="callBtn" href="tel:+201000000000" data-i18n="callBtn">اتصل الآن</a>
+      <a class="safwa-btn safwa-btn-line" id="waBtn" href="https://wa.me/201000000000" target="_blank" rel="noreferrer" data-i18n="waBtn">راسلنا واتساب</a>
+    </div>
+  </section>
+
+  <footer class="safwa-footer">
+    <div class="safwa-footer-brand" data-i18n="footerBrand">الصفوة، ذهب ومجوهرات</div>
+    <p class="safwa-footer-note" data-i18n="demoNote">نسخة عرض تجريبية: بيانات العنوان والتواصل لحين اعتمادها من المحل.</p>
+    <p class="safwa-footer-credit" data-i18n="credit">الصور عبر Pexels</p>
+  </footer>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
