@@ -1,0 +1,233 @@
+html, body { margin: 0; min-height: 100%; }
+body { background: #0b0a08; }
+
+@font-face { font-family: 'Amiri'; font-weight: 400; font-display: swap; src: url('../fonts/amiri-400-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Amiri'; font-weight: 400; font-display: swap; src: url('../fonts/amiri-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+@font-face { font-family: 'Amiri'; font-weight: 700; font-display: swap; src: url('../fonts/amiri-700-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Amiri'; font-weight: 700; font-display: swap; src: url('../fonts/amiri-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+@font-face { font-family: 'Tajawal'; font-weight: 300; font-display: swap; src: url('../fonts/tajawal-300-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Tajawal'; font-weight: 300; font-display: swap; src: url('../fonts/tajawal-300-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+@font-face { font-family: 'Tajawal'; font-weight: 400; font-display: swap; src: url('../fonts/tajawal-400-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Tajawal'; font-weight: 400; font-display: swap; src: url('../fonts/tajawal-400-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+@font-face { font-family: 'Tajawal'; font-weight: 500; font-display: swap; src: url('../fonts/tajawal-500-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Tajawal'; font-weight: 500; font-display: swap; src: url('../fonts/tajawal-500-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+@font-face { font-family: 'Tajawal'; font-weight: 700; font-display: swap; src: url('../fonts/tajawal-700-arabic.woff2') format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: 'Tajawal'; font-weight: 700; font-display: swap; src: url('../fonts/tajawal-700-latin.woff2') format('woff2'); unicode-range: U+0000-00FF; }
+
+
+.safwa {
+  position: relative;
+  --sf-bg: #0b0a08;
+  --sf-surface: #17130d;
+  --sf-ink: #f2ead9;
+  --sf-ink2: #b8a983;
+  --sf-gold: #d8b45a;
+  --sf-gold-strong: #efce7c;
+  --sf-hair: rgba(216, 180, 90, 0.22);
+  background: var(--sf-bg);
+  color: var(--sf-ink);
+  font-family: 'Tajawal', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.9;
+  overflow: hidden;
+}
+.safwa[data-theme='light'] {
+  --sf-bg: #faf5ea;
+  --sf-surface: #fffdf6;
+  --sf-ink: #2b2113;
+  --sf-ink2: #77663f;
+  --sf-gold: #9a7716;
+  --sf-gold-strong: #7d5f0f;
+  --sf-hair: rgba(140, 108, 30, 0.3);
+}
+
+.safwa *, .safwa *::before, .safwa *::after { box-sizing: border-box; }
+.safwa img { display: block; max-width: 100%; }
+.safwa h1, .safwa h2, .safwa h3, .safwa p, .safwa ul, .safwa figure { margin: 0; padding: 0; }
+
+/* ---------- top bar ---------- */
+.safwa-top {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+}
+.safwa-brand { display: flex; flex-direction: column; line-height: 1.3; }
+.safwa-brand-name { font-family: 'Amiri', serif; font-weight: 700; font-size: 24px; color: #efce7c; text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
+.safwa-brand-sub { font-size: 10px; letter-spacing: 0.35em; color: rgba(242, 234, 217, 0.75); }
+.safwa-toggles { display: flex; gap: 8px; }
+.safwa-toggle {
+  appearance: none;
+  border: 1px solid rgba(239, 206, 124, 0.55);
+  background: rgba(10, 9, 7, 0.45);
+  color: #f2ead9;
+  font-family: inherit;
+  font-size: 12px;
+  min-height: 36px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.safwa-toggle:hover { background: rgba(239, 206, 124, 0.18); }
+
+/* ---------- hero ---------- */
+.safwa-hero { position: relative; height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
+@media (min-width: 768px) { .safwa-hero { height: 720px; } }
+.safwa-hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 30%;
+  animation: safwa-kenburns 26s ease-in-out infinite alternate;
+}
+@keyframes safwa-kenburns { from { transform: scale(1.02); } to { transform: scale(1.12); } }
+.safwa-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6, 5, 3, 0.94) 0%, rgba(6, 5, 3, 0.55) 38%, rgba(6, 5, 3, 0.25) 62%, rgba(6, 5, 3, 0.45) 100%);
+}
+.safwa-hero-content { position: relative; padding: 40px 26px 52px; text-align: center; width: 100%; }
+.safwa-hero-eyebrow {
+  font-size: 13px; letter-spacing: 0.4em; text-transform: uppercase;
+  color: #efce7c; margin-bottom: 6px;
+}
+.safwa-hero-title {
+  font-family: 'Amiri', serif; font-weight: 700;
+  font-size: 76px; line-height: 1.15;
+  background: linear-gradient(100deg, #9a7716 0%, #d8b45a 35%, #fff3c4 50%, #d8b45a 65%, #9a7716 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  animation: safwa-shimmer 7s linear infinite;
+}
+@media (min-width: 768px) { .safwa-hero-title { font-size: 104px; } }
+@keyframes safwa-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.safwa-hero-rule { width: 72px; height: 1px; margin: 14px auto; background: linear-gradient(to left, transparent, #d8b45a, transparent); }
+.safwa-hero-sub { font-family: 'Amiri', serif; font-size: 22px; color: #f2ead9; }
+.safwa-hero-text { font-size: 14.5px; color: rgba(242, 234, 217, 0.85); max-width: 46ch; margin: 10px auto 0; }
+.safwa-hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+
+.safwa.js .hero-anim { opacity: 0; animation: safwa-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+@keyframes safwa-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+/* ---------- buttons ---------- */
+.safwa-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 10px 26px;
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  border-radius: 2px; letter-spacing: 0.04em;
+  position: relative; overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.safwa-btn:hover { transform: translateY(-2px); }
+.safwa-btn-solid { background: linear-gradient(135deg, #b28a1f, #e5c15e 55%, #b28a1f); color: #1c1505; }
+.safwa-btn-solid::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 40%;
+  inset-inline-start: -60%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  animation: safwa-sweep 3.6s ease-in-out infinite;
+}
+@keyframes safwa-sweep { 0%, 55% { inset-inline-start: -60%; } 90%, 100% { inset-inline-start: 130%; } }
+.safwa-btn-line { border: 1px solid var(--sf-gold); color: var(--sf-gold-strong); }
+.safwa-hero .safwa-btn-line { color: #efce7c; border-color: rgba(239, 206, 124, 0.7); }
+.safwa-btn-line:hover { background: rgba(216, 180, 90, 0.12); }
+
+/* ---------- marquee ---------- */
+.safwa-marquee { border-block: 1px solid var(--sf-hair); padding: 14px 0; overflow: hidden; background: var(--sf-surface); }
+.safwa-marquee-track { display: flex; width: max-content; animation: safwa-marquee 24s linear infinite; }
+.safwa-marquee-run { display: flex; flex-shrink: 0; }
+.safwa-marquee-item {
+  display: inline-flex; align-items: center; gap: 26px; padding-inline-end: 26px;
+  font-family: 'Amiri', serif; font-size: 18px; color: var(--sf-gold); white-space: nowrap;
+}
+.safwa-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--sf-gold); opacity: 0.6; }
+@keyframes safwa-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- sections shared ---------- */
+.safwa-label { font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--sf-gold); margin-bottom: 8px; }
+.safwa-title { font-family: 'Amiri', serif; font-weight: 700; font-size: 34px; line-height: 1.4; color: var(--sf-ink); margin-bottom: 14px; }
+@media (min-width: 768px) { .safwa-title { font-size: 42px; } }
+.safwa-p { font-size: 15px; color: var(--sf-ink2); max-width: 58ch; }
+.safwa-p-gold { color: var(--sf-gold-strong); font-family: 'Amiri', serif; font-size: 18px; margin-top: 10px; }
+
+/* ---------- features ---------- */
+.safwa-features {
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  background: var(--sf-hair);
+  border-bottom: 1px solid var(--sf-hair);
+}
+@media (min-width: 700px) { .safwa-features { grid-template-columns: repeat(3, 1fr); } }
+.safwa-feature { background: var(--sf-bg); padding: 30px 26px; text-align: center; }
+.safwa-feature-gem {
+  display: inline-block; width: 9px; height: 9px; margin-bottom: 10px;
+  background: var(--sf-gold); transform: rotate(45deg);
+  box-shadow: 0 0 14px rgba(216, 180, 90, 0.55);
+}
+.safwa-feature h3 { font-family: 'Amiri', serif; font-weight: 700; font-size: 20px; color: var(--sf-ink); }
+.safwa-feature p { font-size: 13px; color: var(--sf-ink2); }
+
+/* ---------- about ---------- */
+.safwa-about { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 820px) { .safwa-about { grid-template-columns: 1fr 1.1fr; align-items: stretch; } }
+.safwa-about-media { overflow: hidden; }
+.safwa-about-media img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; transition: transform 1.2s ease; }
+.safwa-about-media:hover img { transform: scale(1.05); }
+.safwa-about-body { padding: 48px 26px; background: var(--sf-surface); }
+@media (min-width: 768px) { .safwa-about-body { padding: 64px 48px; } }
+
+/* ---------- gallery ---------- */
+.safwa-gallery { padding: 56px 26px; }
+@media (min-width: 768px) { .safwa-gallery { padding: 72px 48px; } }
+.safwa-gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 26px; }
+@media (min-width: 820px) { .safwa-gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.safwa-piece { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 1; background: var(--sf-surface); }
+.safwa-piece img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.safwa-piece:hover img { transform: scale(1.08); }
+.safwa-piece figcaption {
+  position: absolute; inset-inline: 0; bottom: 0; padding: 26px 14px 12px;
+  background: linear-gradient(to top, rgba(6, 5, 3, 0.85), transparent);
+}
+.safwa-piece figcaption span { font-family: 'Amiri', serif; font-size: 17px; color: #f2ead9; }
+
+/* ---------- craft ---------- */
+.safwa-craft { display: grid; grid-template-columns: 1fr; border-block: 1px solid var(--sf-hair); }
+@media (min-width: 820px) { .safwa-craft { grid-template-columns: 1.1fr 1fr; } }
+.safwa-craft-body { padding: 48px 26px; }
+@media (min-width: 768px) { .safwa-craft-body { padding: 64px 48px; } }
+.safwa-craft-media { overflow: hidden; max-height: 460px; }
+.safwa-craft-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.safwa-craft-media:hover img { transform: scale(1.05); }
+.safwa-craft-list { list-style: none; margin-top: 18px; }
+.safwa-craft-list li {
+  position: relative; padding-inline-start: 22px; margin-top: 10px;
+  font-size: 14.5px; color: var(--sf-ink);
+}
+.safwa-craft-list li::before {
+  content: ''; position: absolute; inset-inline-start: 0; top: 12px;
+  width: 7px; height: 7px; transform: rotate(45deg); background: var(--sf-gold);
+}
+
+/* ---------- contact ---------- */
+.safwa-contact { padding: 56px 26px 48px; text-align: center; }
+@media (min-width: 768px) { .safwa-contact { padding: 72px 48px 56px; } }
+.safwa-contact-rows { max-width: 560px; margin: 26px auto 0; text-align: start; }
+.safwa-contact-row {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between;
+  padding: 16px 2px; border-bottom: 1px solid var(--sf-hair);
+}
+.safwa-contact-label { font-size: 12px; letter-spacing: 0.2em; color: var(--sf-gold); text-transform: uppercase; }
+.safwa-contact-value { font-size: 15px; color: var(--sf-ink); font-weight: 500; }
+.safwa-contact-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+
+/* ---------- footer ---------- */
+.safwa-footer { border-top: 1px solid var(--sf-hair); padding: 30px 26px 36px; text-align: center; background: var(--sf-surface); }
+.safwa-footer-brand { font-family: 'Amiri', serif; font-weight: 700; font-size: 19px; color: var(--sf-gold); }
+.safwa-footer-note { font-size: 12px; color: var(--sf-ink2); margin-top: 8px; }
+.safwa-footer-credit { font-size: 11px; color: var(--sf-ink2); opacity: 0.7; margin-top: 4px; }
+
+/* ---------- scroll reveal (JS-gated so static render shows final state) ---------- */
+.safwa .reveal { transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.safwa.js .reveal { opacity: 0; transform: translateY(28px); }
+.safwa.js .reveal.in { opacity: 1; transform: none; }
