@@ -24,6 +24,7 @@
   <section class="safwa-hero">
     <img class="safwa-hero-img" src="photos/hero.jpg" alt="قلادة ذهبية على خلفية داكنة">
     <div class="safwa-hero-overlay"></div>
+    <canvas class="safwa-hero3d" id="hero3d" aria-hidden="true"></canvas>
     <div class="safwa-hero-content">
       <p class="safwa-hero-eyebrow hero-anim" style="animation-delay:0.15s" data-i18n="heroEyebrow">ذهب ومجوهرات</p>
       <h1 class="safwa-hero-title hero-anim" style="animation-delay:0.35s" data-i18n="heroTitle">الصفوة</h1>
@@ -93,6 +94,8 @@
     <p class="safwa-footer-credit" data-i18n="credit">الصور عبر Pexels</p>
   </footer>
 </div>
+<script type="importmap">{"imports":{"three":"./assets/three.module.js"}}</script>
 <script src="assets/app.js"></script>
+<script type="module" src="assets/hero3d.js"></script>
 </body>
 </html>
