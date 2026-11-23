@@ -231,3 +231,52 @@ body { background: #0b0a08; }
 .safwa .reveal { transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .safwa.js .reveal { opacity: 0; transform: translateY(28px); }
 .safwa.js .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- 3D hero canvas ---------- */
+.safwa-hero-overlay { z-index: 1; }
+.safwa-hero3d { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.safwa-hero-content { z-index: 3; }
+
+/* ---------- desktop pass ---------- */
+@media (min-width: 1024px) {
+  .safwa-hero { height: min(88vh, 880px); min-height: 640px; align-items: center; }
+  .safwa-hero-content { max-width: 920px; margin-inline: auto; padding: 40px 48px; }
+  .safwa-hero-eyebrow { font-size: 15px; }
+  .safwa-hero-title { font-size: 128px; }
+  .safwa-hero-sub { font-size: 27px; }
+  .safwa-hero-text { font-size: 17px; max-width: 52ch; }
+  .safwa-hero-rule { width: 96px; margin: 18px auto; }
+  .safwa-hero-ctas { margin-top: 34px; }
+  .safwa-btn { min-height: 54px; padding: 12px 34px; font-size: 15px; }
+  .safwa-top { padding: 26px 48px; }
+  .safwa-brand-name { font-size: 30px; }
+  .safwa-brand-sub { font-size: 11px; }
+  .safwa-toggle { font-size: 13px; min-height: 40px; padding: 6px 18px; }
+  .safwa-marquee { padding: 18px 0; }
+  .safwa-marquee-item { font-size: 21px; }
+  .safwa-feature { padding: 46px 30px; }
+  .safwa-feature h3 { font-size: 23px; }
+  .safwa-feature p { font-size: 14.5px; }
+  .safwa-about { grid-template-columns: 1.05fr 1fr; max-width: 1500px; margin-inline: auto; }
+  .safwa-about-body { display: flex; flex-direction: column; justify-content: center; padding: 80px 72px; }
+  .safwa-about-media img { min-height: 480px; }
+  .safwa-title { font-size: 50px; }
+  .safwa-p { font-size: 17px; }
+  .safwa-p-gold { font-size: 21px; }
+  .safwa-label { font-size: 13px; }
+  .safwa-gallery { padding: 96px 48px; max-width: 1500px; margin-inline: auto; }
+  .safwa-gallery-grid { margin-top: 40px; gap: 22px; }
+  .safwa-piece figcaption span { font-size: 21px; }
+  .safwa-craft { max-width: 1500px; margin-inline: auto; }
+  .safwa-craft-body { display: flex; flex-direction: column; justify-content: center; padding: 80px 72px; }
+  .safwa-craft-media { max-height: none; }
+  .safwa-craft-list li { font-size: 16px; }
+  .safwa-contact { padding: 96px 48px 72px; }
+  .safwa-contact-rows { max-width: 760px; }
+  .safwa-contact-value { font-size: 17px; }
+  .safwa-footer { padding: 44px 48px 52px; }
+  .safwa-footer-brand { font-size: 22px; }
+}
+@media (min-width: 1500px) {
+  .safwa-about, .safwa-craft, .safwa-gallery { border-inline: 1px solid var(--sf-hair); }
+}
